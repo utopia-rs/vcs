@@ -1,0 +1,29 @@
+[package]
+name = "utopia-vcs"
+description = "Version control system adapters: GitHub, GitLab, Gitea, Forgejo, Gogs, Bitbucket and Origin: repositories, branches, tags, files, commits, pull requests, comments, statuses and check runs, webhook parsing and signature validation, app installation tokens, and shallow sparse clone commands."
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "BSD-3-Clause"
+
+[dependencies]
+async-trait = "0.1"
+hmac = "0.12"
+openssl = "0.10"
+php-std = { version = "0.1.0", git = "https://github.com/utopia-rs/php-std" }
+ring = "0.17"
+serde_json = { version = "1", features = ["raw_value", "preserve_order", "float_roundtrip"] }
+sha1 = "0.10"
+sha2 = "0.10"
+getrandom = "0.3"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "fs", "rt"] }
+utopia-cache = { version = "0.1.0", git = "https://github.com/utopia-rs/cache" }
+utopia-client = { version = "0.1.0", git = "https://github.com/utopia-rs/client" }
+utopia-console = { version = "0.1.0", git = "https://github.com/utopia-rs/console" }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal", "rt", "fs"] }
+
+[package.metadata.utopia]
+php-sync = "da0119eda7c139b8f99b13d814e5a99f9b5ac418"
